@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain-book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4 bg-white m-auto rounded-top wrapper">
+                <h2 class="text-center pt-3">hello <%= name %></h2>
+            <!--Form start -->
+             <form action="#" method="post" enctype="multipart/form-data">
+              
+            
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control" placeholder="<%= email %>" name="email" readonly>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    <input type="tel" class="form-control" placeholder="Phone number" name="phnumber" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    <input type="text" class="form-control" placeholder="enter your residential adress" name="adress" required>
+                </div>
+                <div class="input-group mb-3">
+                <label for="occ">Select your Working Status   </label>
+                <select name="occupation" id="occ" required>
+                    <option value="Resident">Resident</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    <input type="file" name="profileimage" accept="image/*" required>
+                </div>
+                
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    
+                </div>
+             </form>
+              <!--Form ends -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

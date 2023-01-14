@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Signup form</title>
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="746367270042-hi71brjc0q3edsqf6rjk4lurefgil6on.apps.googleusercontent.com.apps.googleusercontent.com"> -->
+
+</head>
+<script>
+    function matchPassword() {
+        var pw1 = document.getElementById("pswd1").value;
+        var pw2 = document.getElementById("pswd2").value;
+        if (pw1 != pw2) {
+            document.getElementById("messagess").innerHTML = "** Passwords are not matching";
+            return false;
+        }
+        if (pw2.length < 6) {
+            document.getElementById("messagess").innerHTML = "** Your password must have atleast 6 characters";
+            return false;
+        }
+        const email = document.getElementById("email").value;
+        const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        if (!regex.test(email)) {
+            document.getElementById("messagess").innerHTML = "** Please enter a valid Gmail address";
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<body class="bg-light">
+    <%- include('./partials/nav') %>
+        <% if (errormessage.length>0) { %>
+            <div class="alert alert-danger text-center">
+                <%= errormessage %>
+            </div>
+            <% } %>
+            
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-lg-4 bg-white m-auto rounded-top wrapper">
+                            <span class="text-center"id="messagess" style="color:red;"></span><br>
+                            <h2 class="text-center pt-3">Signup Now</h2>
+                            <p class="text-cente text-muted lead">It's Free and Takes a Minute</p>
+                            <!--Form start -->
+                            <form action="#" method="post" onsubmit="return matchPassword()">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="First Name" name="fname"
+                                        required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="Last Name" name="lname">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                    <input type="text" class="form-control" placeholder="Email" name="email" required>
+                                    <span id="email"></span><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    <input type="password" id="pswd1" value="" class="form-control"
+                                        placeholder="Password" name="password" required>
+                                    <span id="messages"></span><br>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    <input type="password" id="pswd2" value="" class="form-control"
+                                        placeholder="Confirm Password" name="cnfpassword" required>
+                                   
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success">Signup Now</button>
+                                    <p class="text-center pt-3"> <b>or connect with</b></p>
+                                    <div class="btn-group">
+                                        <!-- Google -->
+                                        <a id="btngo" class="btn btn-primary" style="background-color: #f1523e;"
+                                            href="/auth/google" role="button"><i class="fab fa-google"></i></a>
+                                        <a class="btn btn-primary" style="margin-left:10px;" href="/auth/facebook"
+                                            role="button"><i class="fab fa-facebook-f"></i></a>
+                                    </div>
+                                    <p class="text-center text-muted mt-2">
+                                        When You Register by clicking Signup Button, You Agree to our
+                                        <a href="#" style="color:black">Terms and Conditions</a> and <a href="#"
+                                            style="color:black">Privacy Policy</a>
+                                    </p>
+                                    <p class="text-center">
+                                        Already Have an Account ? <a href="login.html">Login</a>
+                                    </p>
+                                </div>
+                            </form>
+                            <!--Form ends -->
+                        </div>
+                    </div>
+                </div>
+                
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best Online Complain Service in India | www.complainbook.com</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="css/phone.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- bootstrap script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <!-- <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="MyOnlineMeal.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Services</a></li>
+            <li class="item"><a href="#client-section">Our Clients</a></li>
+            <li class="item"><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="" style="font-size: 2rem;">Complainbook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ml-auto">
+                <% if (parameter) { %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                  <% } else { %>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                      </li>
+                  <% } %>
+                <li class="nav-item">
+                    <a class="nav-link" href="">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/userprofile">User Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section id="home">
+        <h1 class="h-primary">Welcome to Complainbook</h1>
+        <p>We are here to listen you and your complain.</p>
+        <p>You can tell whatever you feel without any hesitation. </p>
+        <button class="btn"><a href="http://localhost:3000/registercomplaint" style="color:white">Complain Now</a></button>
+    </section>
+
+    <section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="images/4.jpg" alt="">
+                <h2 class="h-secondary center">Telephone Complain</h2>
+                <p class="center">Phone support comes with various limitations. While it does increase the engagement
+                    factor by facilitating one-on-one support, this also leads to its downfall. Phone agents can only
+                    help one person at a time. Compound this with a high call volume, limited hours of operation, and
+                    complaints that take a considerable amount of time to solve. So you can complain here about your
+                    problem</p>
+            </div>
+            <div class="box">
+                <img src="images/5.jpg" alt="">
+                <h2 class="h-secondary center">Resident Complain</h2>
+                <p class="center">As a tenant, if you pay to rent a home or an apartment, you may at some point have a
+                    dispute with the landlord or management company. Often disputes are about the conditions of the
+                    building, essential services, rent increases, or your right to stay. It’s best to come to an
+                    agreement directly with the landlord or manager. Make sure you get everything in writing. And if you
+                    and the landlord can’t agree, you can turn to outside help.</p>
+            </div>
+            <div class="box">
+                <img src="images/6.jpg" alt="">
+                <h2 class="h-secondary center">Electricity complain</h2>
+                <p class="center">In case of power breakdown or similar issues people go on a hunt. Confused, they end
+                    up calling personnel in the discoms. A lack of response leads to long hours of power cut even when
+                    the breakdown can be rectified n 5 minutes. Since the number will be connected not just to a control
+                    room but also to a data centre, a log will be created that can help the regulators to identify
+                    response to complaints, quality of service as well as the equipment supplied.</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="images/logo1.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="images/logo2.png" alt="Our Client">
+            </div>
+
+            <div class="client-item">
+                <img src="images/logo4.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="images/logo3.png" alt="Our Client">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.complainbook.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+
+</html>
