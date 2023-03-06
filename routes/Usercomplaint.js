@@ -12,6 +12,7 @@ const Rating=require('../Models/Rating')
 router.get('/',authentication,async(req,res)=>{
     // res.render('usercomplaint.ejs');
     try {
+        console.log(req.user.email)
         const Userdata=await Complaintmodel.find({email:req.user.email})
         
         if(Userdata){

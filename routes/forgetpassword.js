@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
         }
         else{
         req.flash("noemail"," email not registered ")
-        res.redirect('/forgetpassword')
+        res.redirect('/signup')
         }
         
         

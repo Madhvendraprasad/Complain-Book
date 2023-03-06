@@ -1,3 +1,6 @@
+body{
+  background-color:"aqua";
+}
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
@@ -37,4 +40,13 @@
   }
   #nav-toggle-button{
     color:black;
+  }
+  @media (max-width: 1158px) {
+    #logo {
+      font-size: 1rem;
+      margin-left: 3%;
+    }
+    #navbar-container {
+      margin-left: 10%;
+    }
   }

@@ -12,33 +12,26 @@
 </head>
 
 <body>
+    <!-- <nav class="navbar navbar-expand-lg py-4 navbar-dark " style="background-color: blanchedalmond;">
+        <a class="navbar-brand" style="color: black;" href="#">  <span class="mb-0 h1"> Complainbook</span></a>
+    </nav> -->
+
     <%- include('./partials/nav') %>
-        <div style="display:inline;margin-left:20%;">
-        <div class="product " style="margin-left:20%;margin-top:20%">
-         
+        <div class="bg-light w-75 h-100 ml-0 mr-0 mx-auto text-center"style="margin-top:10%;">
+        <div class="product">
           <div class="description">
-            <h3>Standard Complaints</h3>
-            <h5>Rupees 100 only</h5>
+            <h2 style="color: red;">Standard Complaints</h2>
           </div>
-        </div>
-        <form action="/payments" method="POST">
-          <button type="submit" id="checkout-button">Checkout</button>
+        <h4 style="color: skyblue;">Rupees 100 only</h4>
+       </div>
+          <form action="/payments" method="POST">
+          <button style="background-color: #00ffff;" type="submit" id="checkout-button">Checkout</button>
         </form>
       </div>
-      </body>
-    </div>
 
 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"></script>
-        
-
-
-
-        
-
 </body>
-
 </html>

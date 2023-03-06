@@ -31,7 +31,8 @@ router.post('/',async(req,res) =>{
             })
             if(checkpassword){
                 req.session.parameter=true;
-                res.redirect('/userprofile')
+                // console.log(req.session.parameter)
+                res.redirect('/')
 
 
             }

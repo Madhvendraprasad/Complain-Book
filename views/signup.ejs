@@ -28,16 +28,16 @@
             return false;
         }
         const email = document.getElementById("email").value;
-        const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-        if (!regex.test(email)) {
-            document.getElementById("messagess").innerHTML = "** Please enter a valid Gmail address";
-            return false;
-        }
+        // const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        // if (!regex.test(email)) {
+        //     document.getElementById("messagess").innerHTML = "** Please enter a valid Gmail address";
+        //     return false;
+        // }
         return true;
     }
 </script>
 
-<body class="bg-light">
+<body style="background-color: #afc9c9;">
     <%- include('./partials/nav') %>
         <% if (errormessage.length>0) { %>
             <div class="alert alert-danger text-center">

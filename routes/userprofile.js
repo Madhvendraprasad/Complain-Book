@@ -9,7 +9,7 @@ router.get('/',authenticate,async(req,res)=>{
     try {
         const Userdata=await userinfo.findOne({email:req.user.email})
         const username=await Users.findOne({email:req.user.email})
-        console.log(Userdata);
+        // console.log(Userdata);
         if(Userdata){
             res.render('profile.ejs',{Userdata:Userdata,username:username,logincheck:req.flash('loginalready')});
         }
