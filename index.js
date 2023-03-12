@@ -66,7 +66,12 @@ const forgetpassword=require('./routes/forgetpassword')
 app.use('/forgetpassword',forgetpassword);
 const resetpassword=require('./routes/resetpassword')
 app.use('/resetpassword',resetpassword)
-
+const standardcomplaint=require('./routes/admin_standard_complaints')
+app.use('/standard_complaint',standardcomplaint)
+const regular_complaint=require('./routes/regular_complaint')
+app.use('/regular_complaint',regular_complaint)
+const resolve_problems=require('./routes/resolve_problem')
+app.use('/resolved_complain',resolve_problems)
 app.listen(port, function () {
   console.log("server is runnong on the port 3000 ");
 })
