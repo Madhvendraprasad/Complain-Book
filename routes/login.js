@@ -8,9 +8,9 @@ const flash=require('connect-flash')
 const Loginauth=require('../Controllers/logincontrol')
 
 router.use(session({
-    secret: 'MADHAVMADHAVMADHAV', // a secret key to sign the session ID cookie
-    resave: false, // don't save the session if it wasn't modified
-    saveUninitialized: false // don't create a session if there's no data to store in it
+    secret: 'MADHAVMADHAVMADHAV',
+    resave: false,
+    saveUninitialized: false 
   }));
 router.get('/',Loginauth,(req,res)=>{
         
@@ -30,8 +30,8 @@ router.post('/',async(req,res) =>{
                 httpOnly:true,
             })
             if(checkpassword){
-                req.session.parameter=true;
-                // console.log(req.session.parameter)
+               
+                
                 res.redirect('/')
 
 
