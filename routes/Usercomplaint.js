@@ -10,14 +10,14 @@ const flash=require('connect-flash')
 router.use(bodyParser.json())
 const Rating=require('../Models/Rating')
 router.get('/',authentication,async(req,res)=>{
-    // res.render('usercomplaint.ejs');
+    
     try {
-        console.log(req.user.email)
+        
         const Userdata=await Complaintmodel.find({email:req.user.email})
         
         if(Userdata){
             
-            res.render('usercomplaint.ejs',{dataofUser:Userdata,checkdel:req.flash('delete'),checkup:req.flash('update'),checkrating:req.flash('rating'),checkoldrating:req.flash('oldrating')});
+            res.render('usercomplaint.ejs',{dataofUser:Userdata,checkdel:req.flash('delete'),checkup:req.flash('update'),checkrating:req.flash('rating'),checkoldrating:req.flash('oldrating'),user:req.user});
         }
         else{
             

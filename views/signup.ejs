@@ -38,7 +38,41 @@
 </script>
 
 <body style="background-color: #afc9c9;">
-    <%- include('./partials/nav') %>
+    <!-- code for the navbar starts -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand " href="" @mediaid="logo">Complainbook</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div class="container float-right " style="margin-left:40%;padding-left:2%"id="navbar-container">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/registercomplaint">New-Complaint</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/usercomplaint">Registered-Complaint</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">
+                      signup
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+   <!-- code for the navbar ends -->
         <% if (errormessage.length>0) { %>
             <div class="alert alert-danger text-center">
                 <%= errormessage %>

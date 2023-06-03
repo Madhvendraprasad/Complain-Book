@@ -6,11 +6,22 @@ const mongoose=require('mongoose')
 const nodemailer=require('nodemailer')
 const flash=require('connect-flash');
 const session=require('express-session');
-router.get('/',async(req,res)=>{
-    const standardcomplaint=await Complaint.find({paid:'1',status:'0'})
-    const regularcomplaint=await Complaint.find({paid:'0',status:'0'})
+const qr=require('qrcode');
+const speakeasy=require('speakeasy')
+const authenetication=require('../Controllers/authenticate')
+
+router.get('/',authenetication,async(req,res)=>{
     
-    res.render('adminpage.ejs',{regularcomplaint:regularcomplaint,standardcomplaint:standardcomplaint,check2:req.flash('wrong email')})
+    if(req.user.isadmin=="yes"){
+        const standardcomplaint=await Complaint.find({paid:'1',status:'0'})
+        const regularcomplaint=await Complaint.find({paid:'0',status:'0'})
+        
+        res.render('adminpage.ejs',{regularcomplaint:regularcomplaint,standardcomplaint:standardcomplaint,check2:req.flash('wrong email')})
+    }
+    else res.redirect('/profile')
+    
+   
+ 
 })
 router.post('/',async(req,res)=>{
     try {
@@ -26,6 +37,7 @@ router.post('/',async(req,res)=>{
             })
         }
         else{
+            console.log("wrong email");
             req.flash('wrong email','Email is not registered with us')
             res.redirect('/admin')
         } 

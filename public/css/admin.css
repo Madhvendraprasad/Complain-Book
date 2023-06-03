@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    min-height:100vh;
+    background-color:#fff;
+}
+.Navbar{
+    width:250px;
+    height:100vh;
+    position:fixed;
+    margin-left:-300px;
+    background-color:#7952b3;
+    transition:0.4s;
+}
+.nav-link{
+    font-size:1.2rem;
+
+}
+.nav-link:action,
+.nav-link:focus,
+.nav-link:hover{
+    background-color: #ffffff26;
+}

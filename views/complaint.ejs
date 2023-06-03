@@ -8,9 +8,42 @@
     <title>Complain-book</title>
 </head>
 
-    <body class="bg-light">
-        <%- include('./partials/nav') %>
-        <div class="container" Style="width:1000px;height:300px" >
+    <body style="background-color: #F7E0B8;">
+       <!-- code for navbar starts -->
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand " href="" @mediaid="logo">Complainbook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo01" >
+            <div class="container float-right " style="margin-left:50%;padding-left:2%"id="navbar-container">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registercomplaint">New-Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aboutus">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/usercomplaint">Register-Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/userprofile">
+                          <span style="font-weight:bolder;color:white"><%= user.fname %></span> 
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+       <!-- code for navbar ends -->
+        <div class="container bg-dark" Style="width:1000px;height:300px" >
             <div class="row mt-5" style="height:500px">
                 <div class="col-lg-4 bg-white m-auto rounded-top wrapper" style="height:500px;width:1000px">
                     <h2 class="text-center pt-3">Add-A-Complaint</h2>
@@ -42,7 +75,7 @@
                     </div>
                     <% if (!para) { %>
                         <div class="d-grid mb-5">
-                            <p>Want Complaint to be personal <a href="/payments">Click here</a></p>
+                            <p>For Complaints to be Paid <a href="/payments">Click here</a></p>
                             
                         </div>
                       <% } %>
@@ -51,12 +84,13 @@
                   <!--Form ends -->
                 </div>
             </div>
-            <footer class="my-5 d-flex align-items-center justify-content-center">
-                <div class="center">
-                    Copyright &copy; www.complainbook.com. All rights reserved!
-                </div>
-            </footer>
+            
         </div>
+        <footer style="position: fixed;bottom: 0;width: 100%;">
+            <div class="center" style="background-color: black;color: wheat;text-align:center">
+                Copyright &copy; www.complainbook.com. All rights reserved!
+            </div>
+        </footer>
 
 
     

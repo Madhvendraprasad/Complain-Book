@@ -4,7 +4,8 @@ const authenticate=require('../Controllers/authenticate')
 const Complaint=require('../Models/Complaintmodel')
 router.get('/',authenticate,(req,res)=>{
     console.log(req.query.id)
-    res.render('complaint.ejs',{para:req.query.id});
+    const user=req.user;
+    res.render('complaint.ejs',{para:req.query.id,user:user});
 })
 router.post('/',authenticate,async(req,res)=>{
     

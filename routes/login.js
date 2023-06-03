@@ -5,14 +5,18 @@ const bcrypt=require('bcrypt');
 const jwt=require("jsonwebtoken")
 const session=require('express-session')
 const flash=require('connect-flash')
-const Loginauth=require('../Controllers/logincontrol')
+const authenetication=require('../Controllers/authenticate')
 
 router.use(session({
     secret: 'MADHAVMADHAVMADHAV',
     resave: false,
     saveUninitialized: false 
   }));
-router.get('/',Loginauth,(req,res)=>{
+router.get('/',(req,res)=>{
+   
+    if(req.user){
+        res.redirect('/userprofile')
+    }
         
         res.render('login.ejs',{check:req.flash('error'),check2:req.flash('error1'),check3:req.flash('sucess'),check4:req.flash('reset')})
 })

@@ -1,14 +1,56 @@
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        
     <title>Complain-book</title>
 </head>
+<style>
+    .box-shadow {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      background-color: cornsilk;
+    }
+  </style>
+<body style="background-color: #F7E0B8;">
+    <!-- code for the navbar section starts -->
 
-<body class="bg-light">
-    <%- include('./partials/nav') %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand " href="" @mediaid="logo">Complainbook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="container float-right " style="margin-left:50%;padding-left:2%"id="navbar-container">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registercomplaint">New-Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aboutus">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/usercomplaint">Register-Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/userprofile">
+                          <span style="font-weight:bolder;color:white"><%= user.fname %></span> 
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+
+    <!-- code for the navbar section ends -->
 
         <% if (checkdel.length>0) { %>
             <div class="alert alert-success text-center">
@@ -30,61 +72,52 @@
                                         <%= checkoldrating %>
                                     </div>
                                     <% } %>
-                                        <div class="container mt-5 mb-3 ml-5" style="margin:0 auto;    display: flex;
-    flex-direction: column;
-    margin-left: 34%;">
-                                            <% for(var i=0; i < dataofUser.length; i++) { %>
-                                                <div class="container mt-5 mb-3 ml-5 ">
-                                                    <div class="col4 box">
-                                                        <h1>
-                                                            <%= dataofUser[i].ptype %>
-                                                        </h1>
-                                                        <div class="box-content">
-                                                            <p>
-                                                                <%= dataofUser[i].description %>
-
-                                                            </p>
+                                        
+                                                <div class="row"style="margin-top:6%;margin-left:10%">
+                                                    <% for(var i=0; i < dataofUser.length; i++) { %>
+                                                        <div class="col-lg-3 col-md-4 col-sm-6 m-3 "  style="padding-left:1.5rem;border-radius:12px;border-color:green;border-style:inset;padding: 1rem;" 
+                                                    onmouseover="this.classList.add('box-shadow')"
+                                                    onmouseout="this.classList.remove('box-shadow')">
+                                        
+                                                            <div class="card-body pl-5" style="width: 16rem;height:15rem;">
+                                                                <div class="card-body text-align-center">
+                                                                    <h5 class="card-title text-dark mb-2" style="text-align:center;font-family: cursive;font-size: xx-large;">
+                                                                          <%= dataofUser[i].ptype  %><span>
+                                                                            <i class="fa-duotone fa-check"></i>
+                                                                          </span>
+                                                                    </h5>
+                                        
+                                        
+                                        
+                                                                    
+                                                                    <p class=" mb-0" style="font-size: small; color: rgb(0, 0, 0);">
+                                                                        
+                                                                        <br>
+                                                                        <span class="text-secondary" >
+                                                                            <b><%= dataofUser[i].description %></b>
+                                                                        </span>
+                                                                    </p>
+                                        
+                                        
+                                                                    <div class="fluid-container mt-5" style="text-align: center;display: grid;margin-left:22%;margin-bottom: 6%;">
+                                                                        <button type="submit"
+                                                                        style="margin-bottom:3%;"class="btn btn-primary"><a
+                                                                            href="http://localhost:3000/update/<%= dataofUser[i]._id.toString() %>"style="color:white;text-decoration:none;">Update</a></button>
+                                                                            
+                                                                            <button type="submit"
+                                                                            style='background-color: green; border-radius: 5px;color: white;'
+                                                                     onclick='del("<%= dataofUser[i]._id.toString() %>")'>Delete</button>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            
+            
                                                         </div>
-                                                    </div>
-                                                    <div class="buttons">
-                                                        <button type="submit"
-                                                            style="background-color: red; color: white; border-radius: 14px;"><a
-                                                                href="http://localhost:3000/update/<%= dataofUser[i]._id.toString() %>">Update</a></button>
-
-
-                                                        <button type="submit"
-                                                            style='background-color: green;color: white; border-radius: 14px;'
-                                                            onclick='del("<%= dataofUser[i]._id.toString() %>")'>Delete</button>
-
-
-
-                                                    </div>
-
-
-
-                                                </div>
-                                                <% if (dataofUser[i].status==1) { %>
-                                                    <form id="rating-form" method="post">
-                                                        <input type="hidden" id="id"
-                                                            value="<%= dataofUser[i]._id.toString() %>">
-                                                        <label for="rating">Rating:</label>
-                                                        <select id="rating" name="rating">
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                        </select>
-                                                        <button type="submit"
-                                                            style="background-color: Blue;color: white; border-radius: 14px;"
-                                                            id="rating-button">Rate</button>
-                                                    </form>
-                                                    <% } %>
-
-
-
-
                                                         <% } %>
+                                                </div>
+                                                
+                                                       
                                         </div>
                                         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                                         <script

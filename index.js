@@ -72,6 +72,8 @@ const regular_complaint=require('./routes/regular_complaint')
 app.use('/regular_complaint',regular_complaint)
 const resolve_problems=require('./routes/resolve_problem')
 app.use('/resolved_complain',resolve_problems)
+const success_page=require('./routes/success_page')
+app.use('/success_page',success_page)
 app.listen(port, function () {
   console.log("server is runnong on the port 3000 ");
 })

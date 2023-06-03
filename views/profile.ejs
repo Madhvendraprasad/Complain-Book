@@ -29,19 +29,19 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon bg-black"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarnew" style="justify-content: end;">
+    <div class="collapse navbar-collapse" id="navbarnew" style="justify-content: end;margin-right:4%;">
       <ul class="navbar-nav ml-auto pr-4">
-        <li class="nav-item btn btn-success">
+        <li class="nav-item btn btn-success " style="margin-right:1%;">
           <a class="nav-link activeNavLink" href="/" style="color:white">
             <i class="fa fa-home"></i> Home
           </a>
         </li>
-        <li class="nav-item btn btn-danger">
+        <li class="nav-item btn btn-danger " style="margin-right:2%;">
           <a class="nav-link activeNavLink" href="/logout" style="color:white">
             <i class="fa-solid fa-arrow-right-from-bracket"></i> logout
           </a>
         </li>
-        <li class="nav-item  btn btn-outline-primary">
+        <li class="nav-item  btn btn-outline-primary" style="margin-right:1%;">
           <a class="nav-link "  href="/registercomplaint"id="navbarDropdown" role="button"   style="color
           :black">
             <i class="fa fa-user-plus"></i>
@@ -68,12 +68,12 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-10 mt-5 pt-5">
             <div class="row z-depth-3">
-              <div class="col-sm-4 bg-info rounded-left">
+              <div class="col-sm-4  rounded-left">
                 <div class="card-block text-center text-white">
                   <div class="thumbnail-container">
-                    <img src="images\<%= Userdata.image %>" class="img-thumbnail" alt="user image">
+                    <img src="images\<%= Userdata.image %>" class="img-thumbnail" alt="user image"style="border-radius:50%;">
                   </div>
-                  <h2 class="font-weight-bold mt-4">
+                  <h2 class="font-weight-bold mt-4 text-dark" style="font-family:cursive;">
                     <%= username.fname %>
                       <%=username.lname %>
                   </h2>

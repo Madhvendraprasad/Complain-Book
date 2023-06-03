@@ -40,7 +40,10 @@ const UserSchema = new mongoose.Schema({
             }
 
         }
-    ]
+    ],
+    isadmin:{
+        type:String,
+    }
     
     
 })
